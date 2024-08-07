@@ -8,3 +8,5 @@ function toggleMenu() {
         console.log("Clase de navbar:", myNav.className);
     }
 }
+
+document.getElementById('boton').addEventListener('click', toggleMenu);
