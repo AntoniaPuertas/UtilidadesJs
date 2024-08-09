@@ -12,7 +12,12 @@ function guardarNombre(){
 }
 
 function mostrarNombre(name){
-    saludoTxt.textContent = `¡Hola, ${name}`;
+    const hora = new Date().getHours();
+    let mensaje = "Buenas noches";
+    if(hora < 12) mensaje = "Buenos días";
+    if(hora < 18 && hora > 12) mensaje = "Buenas tardes";
+
+    saludoTxt.textContent = `¡${mensaje}, ${name}`;
     nameInputContainer.style.display = 'none';
 }
 
@@ -29,3 +34,5 @@ const nombreGuardado = localStorage.getItem('nombreUsuario');
 if(nombreGuardado){
     mostrarNombre(nombreGuardado);
 }
+
+const fecha = new Date();
